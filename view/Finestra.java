@@ -16,7 +16,9 @@ public class Finestra extends JFrame implements WindowListener
 		this.setVisible(true);
 		this.setTitle("miiari ace");
 	}
-	
+	public Pannello getPannello() {
+		return p;
+	}
 	@Override
 	public void windowOpened(WindowEvent e)
 	{
