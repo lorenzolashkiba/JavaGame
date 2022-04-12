@@ -4,6 +4,8 @@ import javax.swing.JPanel;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Image;
+
 import javax.swing.JProgressBar;
 import java.awt.Color;
 
@@ -31,11 +33,12 @@ public class Pannello extends JPanel
 	public Pannello()
 	{
 		setLayout(null);
-		
+		//TODO: fai funzionare le immagini
 		lblMoney= new JLabel("soldi");
-		lblMoney.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblMoney.setBounds(303, 18, 53, 13);
-		lblMoney.setIcon(new ImageIcon(Pannello.class.getResource("/assets/soldi.png")));
+//		lblMoney.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblMoney.setBounds(201, 18, 155, 179);
+		ImageIcon icon=new ImageIcon("C:\\Users\\Shera secondo\\Desktop\\SheraLashkiba\\src\\assets\\soldi.png");
+		lblMoney.setIcon(icon);
 		add(lblMoney);
 		
 		lblValuation = new JLabel("City evaluation");
@@ -80,7 +83,7 @@ public class Pannello extends JPanel
 		
 		lblHour = new JLabel("1/1/1970");
 		lblHour.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		lblHour.setBounds(10, 11, 82, 23);
+		lblHour.setBounds(10, 11, 116, 23);
 		add(lblHour);
 		
 		progressBar = new JProgressBar();

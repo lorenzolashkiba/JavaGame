@@ -12,11 +12,12 @@ public class Finestra extends JFrame implements WindowListener
 	{
 		p=new Pannello();
 		this.setContentPane(p);
+		this.setResizable(false);
 		this.setBounds(10, 10, 900, 660);
 		this.setVisible(true);
 		this.setTitle("miiari ace");
 	}
-	
+	//TODO: fai chiudere definitivamente il processo dopo aver chiuso la finestra
 	@Override
 	public void windowOpened(WindowEvent e)
 	{
