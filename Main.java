@@ -1,11 +1,12 @@
-import view.Finestra;
+import controller.Controller;
+import view.Frame;
 
 public class Main
 {
 	
 	public static void main(String[] args)
 	{
-		Finestra f=new Finestra();
-		
+		Frame f=new Frame();
+		Controller controller = new Controller(f.getPannello());
 	}
 }

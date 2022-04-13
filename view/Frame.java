@@ -3,21 +3,28 @@ package view;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
-public class Finestra extends JFrame implements WindowListener
+public class Frame extends JFrame implements WindowListener
 {
-	private Pannello p;
+	private Panel p;
 	
-	public Finestra()
+	public Frame()
 	{
-		p=new Pannello();
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		p=new Panel();
 		this.setContentPane(p);
 		this.setResizable(false);
 		this.setBounds(10, 10, 900, 660);
 		this.setVisible(true);
-		this.setTitle("miiari ace");
+		this.addWindowListener(this);
+		this.setTitle("Sim City replica");
 	}
-	//TODO: fai chiudere definitivamente il processo dopo aver chiuso la finestra
+		
+	public Panel getPannello() {
+		return p;
+	}
+	
 	@Override
 	public void windowOpened(WindowEvent e)
 	{
@@ -27,7 +34,13 @@ public class Finestra extends JFrame implements WindowListener
 	@Override
 	public void windowClosing(WindowEvent e)
 	{
-		
+		int control=JOptionPane.showConfirmDialog(this, "Sei sicuro di uscire", "Conferma", JOptionPane.YES_NO_OPTION);
+		if(control==JOptionPane.YES_OPTION){
+			System.exit(0);
+		}		
+		else{
+			this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		}
 	}
 	
 	@Override

@@ -4,12 +4,13 @@ import javax.swing.JPanel;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import java.awt.Font;
-import java.awt.Image;
-
 import javax.swing.JProgressBar;
 import java.awt.Color;
+import javax.swing.JButton;
 
-public class Pannello extends JPanel
+import controller.Controller;
+
+public class Panel extends JPanel
 {
 	private JLabel lblMoney;
 	private JLabel nMoney;
@@ -29,16 +30,18 @@ public class Pannello extends JPanel
 	private JLabel nTraffic;
 	private JLabel lblHour;
 	private JProgressBar progressBar;
+	private JButton btnBuild;
+	private JButton btnWarning;
 	
-	public Pannello()
+	public Panel()
 	{
 		setLayout(null);
 		//TODO: fai funzionare le immagini
 		lblMoney= new JLabel("soldi");
 //		lblMoney.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblMoney.setBounds(201, 18, 155, 179);
-		ImageIcon icon=new ImageIcon("C:\\Users\\Shera secondo\\Desktop\\SheraLashkiba\\src\\assets\\soldi.png");
-		lblMoney.setIcon(icon);
+		lblMoney.setBounds(339, 11, 36, 33);
+//		ImageIcon icon=new ImageIcon(".\\imgs\\soldi.jpg");
+		lblMoney.setIcon(/*icon*/new ImageIcon(".\\imgs\\soldi.png"));
 		add(lblMoney);
 		
 		lblValuation = new JLabel("City evaluation");
@@ -126,6 +129,25 @@ public class Pannello extends JPanel
 		nMoney.setBounds(376, 18, 45, 23);
 		add(nMoney);
 		
+		btnBuild = new JButton("Build");
+		btnBuild.setBackground(Color.GREEN);
+		btnBuild.setForeground(Color.BLACK);
+		btnBuild.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		btnBuild.setBounds(52, 322, 109, 37);
+		add(btnBuild);
+		
+		btnWarning= new JButton("Warning");
+		btnWarning.setBackground(Color.RED);
+		btnWarning.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		btnWarning.setBounds(190, 322, 109, 37);
+		add(btnWarning);
+		
+	}
+	
+	public void btnListener(Controller c)
+	{
+		btnBuild.addActionListener(c);
+		btnWarning.addActionListener(c);
 	}
 	
 	public JLabel getLblMoney()
@@ -171,6 +193,14 @@ public class Pannello extends JPanel
 	public JProgressBar getLblProgressBar()
 	{
 		return progressBar;
+	}
+	public JButton getBtnBuild()
+	{
+		return btnBuild;
+	}
+	public JButton getBtnWarnings()
+	{
+		return btnWarning;
 	}
 	
 	public void setMoney(String lashkiba_metti_qui)
