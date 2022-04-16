@@ -6,7 +6,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 import model.DatiPanel;
+import view.BuildFrame;
 import view.Panel;
+import view.WarningFrame;
 
 public class Controller extends Thread implements ActionListener{
 	private Panel dati;
@@ -20,11 +22,22 @@ public class Controller extends Thread implements ActionListener{
 		this.start();
 		format = DateTimeFormatter.ofPattern("dd-MM-yyyy");  
 		dati.getLblOra().setText(datiPanel.getDay().format(format));
+	
+		dati.btnListener(this);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+	
+		if(e.getSource() == dati.getBtnBuild() ) {
+			
+			BuildFrame b = new BuildFrame();
+			b.build();
+		}else if(e.getSource() == dati.getBtnWarnings()) {
+			
+			WarningFrame w = new WarningFrame();
+			w.build();
+		}
 		
 	}
 	private void dateChange() {

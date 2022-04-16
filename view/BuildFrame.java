@@ -1,17 +1,44 @@
 package view;
 
-
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.JButton;
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
 import java.awt.Font;
 
-public class BuildPanel extends JPanel
-{
-	public BuildPanel()
-	{
-		setLayout(null);
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+public class BuildFrame extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void build() {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					BuildFrame frame = new BuildFrame();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public BuildFrame() {
 		
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(contentPane);
 		JButton btnNewButton = new JButton("Condominio");
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		btnNewButton.setBounds(10, 10, 121, 29);
@@ -61,6 +88,7 @@ public class BuildPanel extends JPanel
 		btnNewButton_9.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		btnNewButton_9.setBounds(122, 124, 140, 29);
 		add(btnNewButton_9);
-		this.setVisible(false);
+		
 	}
+
 }
