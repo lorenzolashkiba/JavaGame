@@ -36,17 +36,15 @@ public class Panel extends JPanel
 	public Panel()
 	{
 		setLayout(null);
-		//TODO: fai funzionare le immagini
+		
 		lblMoney= new JLabel("soldi");
-//		lblMoney.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblMoney.setBounds(339, 11, 36, 33);
-//		ImageIcon icon=new ImageIcon(".\\imgs\\soldi.jpg");
-		lblMoney.setIcon(/*icon*/new ImageIcon(".\\imgs\\soldi.png"));
+		lblMoney.setBounds(280, 11, 25, 40);
+		lblMoney.setIcon(new ImageIcon(Panel.class.getResource("/imgs/soldi.png")));
 		add(lblMoney);
 		
 		lblValuation = new JLabel("City evaluation");
 		lblValuation.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblValuation.setBounds(136, 33, 145, 23);
+		lblValuation.setBounds(106, 33, 145, 23);
 		add(lblValuation);
 		
 		lblMajorRating = new JLabel("Major rating");
@@ -96,37 +94,37 @@ public class Panel extends JPanel
 		
 		nWorkers = new JLabel("15");
 		nWorkers.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		nWorkers.setBounds(254, 116, 45, 13);
+		nWorkers.setBounds(254, 113, 45, 13);
 		add(nWorkers);
 		
 		nPplSatis = new JLabel("no");
 		nPplSatis.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		nPplSatis.setBounds(254, 149, 45, 13);
+		nPplSatis.setBounds(254, 146, 45, 13);
 		add(nPplSatis);
 		
 		nPplNum = new JLabel("10000");
 		nPplNum.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		nPplNum.setBounds(254, 182, 45, 13);
+		nPplNum.setBounds(254, 179, 45, 13);
 		add(nPplNum);
 		
 		nCrime = new JLabel("20%");
 		nCrime.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		nCrime.setBounds(254, 207, 45, 21);
+		nCrime.setBounds(254, 208, 45, 21);
 		add(nCrime);
 		
 		nPollution = new JLabel("50%");
 		nPollution.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		nPollution.setBounds(254, 248, 45, 13);
+		nPollution.setBounds(254, 245, 45, 13);
 		add(nPollution);
 		
 		nTraffic = new JLabel("100%");
 		nTraffic.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		nTraffic.setBounds(254, 278, 70, 18);
+		nTraffic.setBounds(254, 275, 70, 18);
 		add(nTraffic);
 		
 		nMoney = new JLabel("10000");
-		nMoney.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		nMoney.setBounds(376, 18, 45, 23);
+		nMoney.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		nMoney.setBounds(307, 11, 58, 40);
 		add(nMoney);
 		
 		btnBuild = new JButton("Build");
@@ -141,10 +139,9 @@ public class Panel extends JPanel
 		btnWarning.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		btnWarning.setBounds(190, 322, 109, 37);
 		add(btnWarning);
-		
 	}
 	
-	public void btnListener(Controller c)
+	public void btnPanelListener(Controller c)
 	{
 		btnBuild.addActionListener(c);
 		btnWarning.addActionListener(c);
@@ -186,7 +183,7 @@ public class Panel extends JPanel
 	{
 		return lblTraffic;
 	}
-	public JLabel getLblOra()
+	public JLabel getLblHour()
 	{
 		return lblHour;
 	}

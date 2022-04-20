@@ -19,7 +19,7 @@ public class Controller extends Thread implements ActionListener{
 		this.dati = dati;
 		this.start();
 		format = DateTimeFormatter.ofPattern("dd-MM-yyyy");  
-		dati.getLblOra().setText(datiPanel.getDay().format(format));
+		dati.getLblHour().setText(datiPanel.getDay().format(format));
 	}
 
 	@Override
@@ -35,7 +35,7 @@ public class Controller extends Thread implements ActionListener{
 			datiPanel.setDay(datiPanel.getDay().plusDays(1));
 			
 			// TODO write day to JLabel
-			dati.getLblOra().setText(datiPanel.getDay().format(format));
+			dati.getLblHour().setText(datiPanel.getDay().format(format));
 			startTime = System.currentTimeMillis();
 		}
 	}
