@@ -36,15 +36,10 @@ public class Frame extends JFrame implements WindowListener
 		
 		setLbls();
 		
-//		lblTest= new JLabel("test");
-//		lblTest.setBounds(800, 22, 149, 100);
-//		lblTest.setIcon(new ImageIcon(Frame.class.getResource("/imgs/supermarket.png")));
-//		panel.add(lblTest);
-		
 		this.setResizable(false);
 		this.setBounds(20, 20, 1200, 660);
 		this.setVisible(true);
-//		this.addWindowListener(this);
+		this.addWindowListener(this);
 		this.setTitle("Sim City replica");
 	}
 	
