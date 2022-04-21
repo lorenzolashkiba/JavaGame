@@ -104,7 +104,7 @@ public class Panel extends JPanel
 		
 		nPplNum = new JLabel("10000");
 		nPplNum.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		nPplNum.setBounds(254, 179, 45, 13);
+		nPplNum.setBounds(254, 176, 51, 18);
 		add(nPplNum);
 		
 		nCrime = new JLabel("20%");
