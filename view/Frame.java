@@ -30,7 +30,8 @@ public class Frame extends JFrame implements WindowListener
 	private static HashMap<String, JLabel> mapLbls;
 	private static HashMap<String, JLabel> mapNLbls;
 	private JLabel lblTest;
-	
+	private static boolean house=false;
+	private static int houseInt=0;
 	public Frame()
 	{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -54,9 +55,9 @@ public class Frame extends JFrame implements WindowListener
 		lbls[0]=new JLabel("House");
 		lbls[0].setBounds(400, 20, 137, 106);
 		lbls[0].setIcon(new ImageIcon(Frame.class.getResource("/imgs/house.png")));
-		lbls[0].setVisible(true);
+		lbls[0].setVisible(house);
 		
-		nLbls[0]=new JLabel("Houses in the city: 250");
+		nLbls[0]=new JLabel("Houses in the city: "+houseInt);
 		nLbls[0].setBounds(550, 40, 170, 50);
 		nLbls[0].setFont(new Font("Tahoma", Font.PLAIN, 17));
 		nLbls[0].setVisible(true);
@@ -111,7 +112,7 @@ public class Frame extends JFrame implements WindowListener
 		panel.add(lbls[4]);
 		panel.add(nLbls[4]);
 		
-		////////////////////////////////////////////////////////////////////////////////////////////////////
+		/////////////////////////////////////////////////////////////
 		lbls[5]=new JLabel("Airport");
 		lbls[5].setBounds(800, 20, 130, 85);
 		lbls[5].setIcon(new ImageIcon(Frame.class.getResource("/imgs/airport.png")));
@@ -201,7 +202,14 @@ public class Frame extends JFrame implements WindowListener
 	{
 		return panel;
 	}
-	
+	////
+	public void addHouse() {
+		if(!house) {
+			house = true;
+		}
+		houseInt++;
+	}
+	////
 	public JLabel getLblPutHouse()
 	{
 		return mapLbls.get(keyHouse);
