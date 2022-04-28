@@ -5,23 +5,29 @@ import java.awt.event.ActionListener;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-import model.DatiPanel;
-import view.BuildFrame;
+import model.CityData;
+import view.BuildPanel;
+import view.Frame;
 import view.Panel;
-import view.WarningFrame;
+import view.WarningPanel;
 
-public class Controller extends Thread implements ActionListener{
-	private Panel dati;
-	private DatiPanel datiPanel;
+public class Controller extends Thread implements ActionListener
+{
+	private Panel data;
+	private CityData cityData;
 	private long startTime;
 	private DateTimeFormatter format;
-	public Controller(Panel dati) {
-		datiPanel = new DatiPanel(LocalDateTime.now());
+	private int change;	//0=Panel, 1=BuildPanel, 2=WarningPanel
+	
+	public Controller(Panel dati)
+	{
+		change=0;
+		cityData = new CityData(LocalDateTime.now());
 		startTime = System.currentTimeMillis();
-		this.dati = dati;
+		this.data = dati;
 		this.start();
 		format = DateTimeFormatter.ofPattern("dd-MM-yyyy");  
-		dati.getLblHour().setText(datiPanel.getDay().format(format));
+		dati.getLblHour().setText(cityData.getDay().format(format));
 		
 		dati.btnPanelListener(this);
 	}
@@ -29,29 +35,37 @@ public class Controller extends Thread implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 	
-		if(e.getSource() == dati.getBtnBuild() ) {
+		if(e.getSource() == data.getBtnBuild() ) {
 			
-			BuildFrame b = new BuildFrame();
-			b.build();
-		}else if(e.getSource() == dati.getBtnWarnings()) {
+//			BuildPanel b = new BuildPanel();
+//			b.build();
+//			b.setVisible(true);
+//			setContentPane(b);
+			change=1;
+		}
+		else if(e.getSource() == data.getBtnWarnings()) {
 			
-			WarningFrame w = new WarningFrame();
+			WarningPanel w = new WarningPanel();
 			w.build();
 		}
 		
 	}
-	private void dateChange() {
+	
+	private void dateChange()
+	{
 		long elapsedTimeSec = (System.currentTimeMillis()-startTime)/1000;
 		
-		if(elapsedTimeSec>60) {
-			System.out.print("new day");
-			datiPanel.setDay(datiPanel.getDay().plusDays(1));
+		if(elapsedTimeSec>60)
+		{
+//			System.out.print("new day");
+			cityData.setDay(cityData.getDay().plusDays(1));
 			
 			// TODO write day to JLabel
-			dati.getLblHour().setText(datiPanel.getDay().format(format));
+			data.getLblHour().setText(cityData.getDay().format(format));
 			startTime = System.currentTimeMillis();
 		}
 	}
+	
 	public void run() {
 		
 		while(true) {
@@ -61,4 +75,8 @@ public class Controller extends Thread implements ActionListener{
 		}
 	}
 	
+	public int getChange()
+	{
+		return change;
+	}
 }

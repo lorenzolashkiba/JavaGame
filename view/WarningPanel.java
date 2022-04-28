@@ -11,7 +11,7 @@ import java.awt.GridLayout;
 import javax.swing.JList;
 import javax.swing.AbstractListModel;
 
-public class WarningFrame extends JFrame {
+public class WarningPanel extends JFrame {
 
 	private JPanel contentPane;
 
@@ -22,7 +22,7 @@ public class WarningFrame extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					WarningFrame frame = new WarningFrame();
+					WarningPanel frame = new WarningPanel();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -34,7 +34,7 @@ public class WarningFrame extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public WarningFrame() {
+	public WarningPanel() {
 		
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
