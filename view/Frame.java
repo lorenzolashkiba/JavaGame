@@ -1,6 +1,6 @@
 package view;
 
-import controller.Controller;
+import controller.InterControl;
 
 import java.awt.Font;
 import java.awt.event.WindowEvent;
@@ -30,34 +30,21 @@ public class Frame extends JFrame implements WindowListener
 	private static HashMap<String, JLabel> mapLbls;
 	private static HashMap<String, JLabel> mapNLbls;
 	private JLabel lblTest;
-	private static boolean house=false;
-	private static int houseInt=0;
+	
 	public Frame()
 	{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		panel=new Panel();
 		this.setContentPane(panel);
-		
-		setLbls();
-		
-		this.setResizable(false);
-		this.setBounds(20, 20, 1200, 660);
-		this.setVisible(true);
-//		this.addWindowListener(this);
-		this.setTitle("Sim City replica");
-	}
-	
-	private static void setLbls()
-	{
 		lbls=new JLabel[10];
 		nLbls=new JLabel[10];
 		
 		lbls[0]=new JLabel("House");
 		lbls[0].setBounds(400, 20, 137, 106);
 		lbls[0].setIcon(new ImageIcon(Frame.class.getResource("/imgs/house.png")));
-		lbls[0].setVisible(house);
+		lbls[0].setVisible(true);
 		
-		nLbls[0]=new JLabel("Houses in the city: "+houseInt);
+		nLbls[0]=new JLabel("0");
 		nLbls[0].setBounds(550, 40, 170, 50);
 		nLbls[0].setFont(new Font("Tahoma", Font.PLAIN, 17));
 		nLbls[0].setVisible(true);
@@ -69,7 +56,7 @@ public class Frame extends JFrame implements WindowListener
 		lbls[1].setIcon(new ImageIcon(Frame.class.getResource("/imgs/cinema.png")));
 		lbls[1].setVisible(true);
 		
-		nLbls[1]=new JLabel("Cinemas in the city: 3");
+		nLbls[1]=new JLabel("0");
 		nLbls[1].setBounds(560, 157, 170, 50);
 		nLbls[1].setFont(new Font("Tahoma", Font.PLAIN, 17));
 		nLbls[1].setVisible(true);
@@ -81,7 +68,7 @@ public class Frame extends JFrame implements WindowListener
 		lbls[2].setIcon(new ImageIcon(Frame.class.getResource("/imgs/restaurant.png")));
 		lbls[2].setVisible(true);
 		
-		nLbls[2]=new JLabel("Restaurants in the city: 6");
+		nLbls[2]=new JLabel("0");
 		nLbls[2].setBounds(600, 240, 190, 50);
 		nLbls[2].setFont(new Font("Tahoma", Font.PLAIN, 17));
 		nLbls[2].setVisible(true);
@@ -93,7 +80,7 @@ public class Frame extends JFrame implements WindowListener
 		lbls[3].setIcon(new ImageIcon(Frame.class.getResource("/imgs/police_station.png")));
 		lbls[3].setVisible(true);
 		
-		nLbls[3]=new JLabel("Police stations in the city: 6");
+		nLbls[3]=new JLabel("0");
 		nLbls[3].setBounds(555, 340, 220, 50);
 		nLbls[3].setFont(new Font("Tahoma", Font.PLAIN, 17));
 		nLbls[3].setVisible(true);
@@ -105,7 +92,7 @@ public class Frame extends JFrame implements WindowListener
 		lbls[4].setIcon(new ImageIcon(Frame.class.getResource("/imgs/train_station.png")));
 		lbls[4].setVisible(true);
 		
-		nLbls[4]=new JLabel("Train stations in the city: 6");
+		nLbls[4]=new JLabel("0");
 		nLbls[4].setBounds(555, 440, 220, 50);
 		nLbls[4].setFont(new Font("Tahoma", Font.PLAIN, 17));
 		nLbls[4].setVisible(true);
@@ -118,7 +105,7 @@ public class Frame extends JFrame implements WindowListener
 		lbls[5].setIcon(new ImageIcon(Frame.class.getResource("/imgs/airport.png")));
 		lbls[5].setVisible(true);
 		
-		nLbls[5]=new JLabel("Airports in the city: 6");
+		nLbls[5]=new JLabel("0");
 		nLbls[5].setBounds(940, 32, 160, 50);
 		nLbls[5].setFont(new Font("Tahoma", Font.PLAIN, 17));
 		nLbls[5].setVisible(true);
@@ -130,7 +117,7 @@ public class Frame extends JFrame implements WindowListener
 		lbls[6].setIcon(new ImageIcon(Frame.class.getResource("/imgs/arcade.png")));
 		lbls[6].setVisible(true);
 		
-		nLbls[6]=new JLabel("Arcades in the city: 6");
+		nLbls[6]=new JLabel("0");
 		nLbls[6].setBounds(940, 150, 160, 50);
 		nLbls[6].setFont(new Font("Tahoma", Font.PLAIN, 17));
 		nLbls[6].setVisible(true);
@@ -142,7 +129,7 @@ public class Frame extends JFrame implements WindowListener
 		lbls[7].setIcon(new ImageIcon(Frame.class.getResource("/imgs/casino.png")));
 		lbls[7].setVisible(true);
 		
-		nLbls[7]=new JLabel("Casinos in the city: 6");
+		nLbls[7]=new JLabel("0");
 		nLbls[7].setBounds(945, 265, 160, 50);
 		nLbls[7].setFont(new Font("Tahoma", Font.PLAIN, 17));
 		nLbls[7].setVisible(true);
@@ -154,7 +141,7 @@ public class Frame extends JFrame implements WindowListener
 		lbls[8].setIcon(new ImageIcon(Frame.class.getResource("/imgs/factory.png")));
 		lbls[8].setVisible(true);
 		
-		nLbls[8]=new JLabel("Factorys in the city: 6");
+		nLbls[8]=new JLabel("0");
 		nLbls[8].setBounds(945, 370, 180, 50);
 		nLbls[8].setFont(new Font("Tahoma", Font.PLAIN, 17));
 		nLbls[8].setVisible(true);
@@ -166,7 +153,7 @@ public class Frame extends JFrame implements WindowListener
 		lbls[9].setIcon(new ImageIcon(Frame.class.getResource("/imgs/supermarket.png")));
 		lbls[9].setVisible(true);
 		
-		nLbls[9]=new JLabel("Supermarket in the city: 6");
+		nLbls[9]=new JLabel("0");
 		nLbls[9].setBounds(955, 485, 200, 50);
 		nLbls[9].setFont(new Font("Tahoma", Font.PLAIN, 17));
 		nLbls[9].setVisible(true);
@@ -196,100 +183,100 @@ public class Frame extends JFrame implements WindowListener
 		mapNLbls.put(keyCasino, nLbls[7]);
 		mapNLbls.put(keyFactory, nLbls[8]);
 		mapNLbls.put(keySupermarket, nLbls[9]);
+		this.setResizable(false);
+		this.setBounds(20, 20, 1200, 660);
+		this.setVisible(true);
+//		this.addWindowListener(this);
+		this.setTitle("Sim City replica");
 	}
-		
 	public Panel getPannello()
 	{
 		return panel;
 	}
 	////
-	public void addHouse() {
-		if(!house) {
-			house = true;
-		}
-		houseInt++;
-	}
-	////
-	public JLabel getLblPutHouse()
-	{
-		return mapLbls.get(keyHouse);
-	}
-	public JLabel getLblPutCinema()
-	{
-		return mapLbls.get(keyCinema);
-	}
-	public JLabel getLblPutRestaurant()
-	{
-		return mapLbls.get(keyRestaurant);
-	}
-	public JLabel getLblPutPoliceStation()
-	{
-		return mapLbls.get(keyPoliceStation);
-	}
-	public JLabel getLblPutTrainStation()
-	{
-		return mapLbls.get(keyTrainStation);
-	}
-	public JLabel getLblPutAirport()
-	{
-		return mapLbls.get(keyAirport);
-	}
-	public JLabel getLblPutArcade()
-	{
-		return mapLbls.get(keyArcade);
-	}
-	public JLabel getLblPutCasino()
-	{
-		return mapLbls.get(keyCasino);
-	}
-	public JLabel getLblPutFactory()
-	{
-		return mapLbls.get(keyFactory);
-	}
-	public JLabel getLblPutSupermarket()
-	{
-		return mapLbls.get(keySupermarket);
-	}
+
 	////////////////////////////////////////////////////////////////////////////
-	public JLabel getNLblPutHouse()
-	{
-		return mapNLbls.get(keyHouse);
+	public void setNLblPutHouse(String sd) {
+		// TODO Auto-generated method stub
+		mapNLbls.get(keyHouse).setText(sd);
 	}
-	public JLabel getNLblPutCinema()
-	{
-		return mapNLbls.get(keyCinema);
+	public String getNLblPutHouse() {
+		// TODO Auto-generated method stub
+		return mapNLbls.get(keyHouse).getText();
 	}
-	public JLabel getNLblPutRestaurant()
+	public String getNLblPutCinema()
 	{
-		return mapNLbls.get(keyRestaurant);
+		return mapNLbls.get(keyCinema).getText();
 	}
-	public JLabel getNLblPutPoliceStation()
+	public void setNLblPutCinema(String s)
 	{
-		return mapNLbls.get(keyPoliceStation);
+		 mapNLbls.get(keyCinema).setText(s);
 	}
-	public JLabel getNLblPutTrainStation()
+	
+	public String getNLblPutRestaurant()
 	{
-		return mapNLbls.get(keyTrainStation);
+		return mapNLbls.get(keyRestaurant).getText();
 	}
-	public JLabel getNLblPutAirport()
+	public void setNLblPutRestaurant(String s)
 	{
-		return mapNLbls.get(keyAirport);
+		 mapNLbls.get(keyRestaurant).setText(s);
 	}
-	public JLabel getNLblPutArcade()
+	
+	public String getNLblPutPoliceStation()
 	{
-		return mapNLbls.get(keyArcade);
+		return mapNLbls.get(keyPoliceStation).getText();
 	}
-	public JLabel getNLblPutCasino()
+	public void setNLblPutPoliceStation(String s)
 	{
-		return mapNLbls.get(keyCasino);
+		mapNLbls.get(keyPoliceStation).setText(s);
 	}
-	public JLabel geNtLblPutFactory()
+	public String getNLblPutTrainStation()
 	{
-		return mapNLbls.get(keyFactory);
+		return mapNLbls.get(keyTrainStation).getText();
 	}
-	public JLabel getNLblPutSupermarket()
+	public void setNLblPutTrainStation(String s)
 	{
-		return mapNLbls.get(keySupermarket);
+		mapNLbls.get(keyTrainStation).setText(s);
+	}
+	public String getNLblPutAirport()
+	{
+		return mapNLbls.get(keyAirport).getText();
+	}
+	public void setNLblPutAirport(String s)
+	{
+		mapNLbls.get(keyAirport).setText(s);
+	}
+	public String getNLblPutArcade()
+	{
+		return mapNLbls.get(keyArcade).getText();
+	}
+	public void setNLblPutArcade(String s)
+	{
+		mapNLbls.get(keyArcade).setText(s);
+	}
+	public String getNLblPutCasino()
+	{
+		return mapNLbls.get(keyCasino).getText();
+	}
+	public void setNLblPutCasino(String s)
+	{
+		 mapNLbls.get(keyCasino).setText(s);
+	}
+	public String getNLblPutFactory()
+	{
+		return mapNLbls.get(keyFactory).getText();
+	}
+	public void setNLblPutFactory(String s)
+	{
+		 mapNLbls.get(keyFactory).setText(s);
+	}
+	public String getNLblPutSupermarket()
+	{
+		return mapNLbls.get(keySupermarket).getText();
+	}
+	public void setNLblPutSupermarket(String s)
+	{
+		mapNLbls.get(keySupermarket).setText(s);
 	}
 	
 	@Override
@@ -338,5 +325,6 @@ public class Frame extends JFrame implements WindowListener
 	public void windowDeactivated(WindowEvent e)
 	{
 		
-	}	
+	}
+
 }

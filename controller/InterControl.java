@@ -7,23 +7,31 @@ import java.time.format.DateTimeFormatter;
 
 import model.DatiPanel;
 import view.BuildFrame;
+import view.Frame;
 import view.Panel;
 import view.WarningFrame;
 
-public class Controller extends Thread implements ActionListener{
+public class InterControl extends Thread implements ActionListener{
 	private Panel dati;
 	private DatiPanel datiPanel;
 	private long startTime;
 	private DateTimeFormatter format;
-	public Controller(Panel dati) {
+	private Frame frame;
+	private BuildListener buildListener;
+	private BuildFrame buildFrame;
+	
+	public InterControl(Frame frame,BuildFrame bf) {
 		datiPanel = new DatiPanel(LocalDateTime.now());
 		startTime = System.currentTimeMillis();
-		this.dati = dati;
+		this.frame = frame;
+		this.dati = frame.getPannello();
 		this.start();
 		format = DateTimeFormatter.ofPattern("dd-MM-yyyy");  
 		dati.getLblHour().setText(datiPanel.getDay().format(format));
-		
+		buildFrame = bf;
+		buildListener = new BuildListener(this,frame);
 		dati.btnPanelListener(this);
+		
 	}
 
 	@Override
@@ -32,7 +40,9 @@ public class Controller extends Thread implements ActionListener{
 		if(e.getSource() == dati.getBtnBuild() ) {
 			
 			BuildFrame b = new BuildFrame();
-			b.build();
+			buildListener.setListener(b);
+			b.setVisible(true);
+			
 		}else if(e.getSource() == dati.getBtnWarnings()) {
 			
 			WarningFrame w = new WarningFrame();
@@ -60,5 +70,5 @@ public class Controller extends Thread implements ActionListener{
 			
 		}
 	}
-	
+
 }

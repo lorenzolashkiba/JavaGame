@@ -8,7 +8,7 @@ import javax.swing.JProgressBar;
 import java.awt.Color;
 import javax.swing.JButton;
 
-import controller.Controller;
+import controller.InterControl;
 
 public class Panel extends JPanel
 {
@@ -141,7 +141,7 @@ public class Panel extends JPanel
 		add(btnWarning);
 	}
 	
-	public void btnPanelListener(Controller c)
+	public void btnPanelListener(InterControl c)
 	{
 		btnBuild.addActionListener(c);
 		btnWarning.addActionListener(c);
