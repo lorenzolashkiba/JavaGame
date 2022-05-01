@@ -13,17 +13,17 @@ import controller.BuildListener;
 
 public class BuildFrame extends JFrame {
 
-	private JPanel contentPane;
 	BuildListener buildListener;
-	private JButton condominio;
+	private JPanel contentPane;
+	private JButton house;
 	private JButton cinema;
-	private JButton ristorante;
-	private JButton stazionePolizia;
-	private JButton stazioneTreni;
-	private JButton aereoporto;
-	private JButton salaGiochi;
+	private JButton restaurant;
+	private JButton policeStation;
+	private JButton trainStation;
+	private JButton airport;
+	private JButton arcade;
 	private JButton casino;
-	private JButton fabbrica;
+	private JButton factory;
 	private JButton supermarket;
 	/**
 	 * Launch the application.
@@ -45,15 +45,15 @@ public class BuildFrame extends JFrame {
 		buildListener = l;
 	}
 	public void btnBuildListener(BuildListener l) {
-		condominio.addActionListener(l);
+		house.addActionListener(l);
 		cinema.addActionListener(l);
-		ristorante.addActionListener(l);
-		stazionePolizia.addActionListener(l);
-		stazioneTreni.addActionListener(l);
-		aereoporto.addActionListener(l);
-		salaGiochi.addActionListener(l);
+		restaurant.addActionListener(l);
+		policeStation.addActionListener(l);
+		trainStation.addActionListener(l);
+		airport.addActionListener(l);
+		arcade.addActionListener(l);
 		casino.addActionListener(l);
-		fabbrica.addActionListener(l);
+		factory.addActionListener(l);
 		supermarket.addActionListener(l);
 		
 	}
@@ -65,92 +65,90 @@ public class BuildFrame extends JFrame {
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
-		condominio = new JButton("Condominio");
-		condominio.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		condominio.setBounds(10, 10, 121, 29);
-		getContentPane().add(condominio);
+		contentPane.setLayout(null);
+		house = new JButton("Condominio");
+		house.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		house.setBounds(10, 10, 121, 29);
+		getContentPane().add(house);
 		
 		cinema = new JButton("Cinema");
 		cinema.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		cinema.setBounds(141, 10, 121, 29);
 		getContentPane().add(cinema);
 		
-		ristorante = new JButton("Restaurant");
-		ristorante.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		ristorante.setBounds(272, 10, 121, 29);
-		getContentPane().add(ristorante);
+		restaurant = new JButton("Restaurant");
+		restaurant.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		restaurant.setBounds(272, 10, 121, 29);
+		getContentPane().add(restaurant);
 		
-		stazionePolizia = new JButton("Police station");
-		stazionePolizia.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		stazionePolizia.setBounds(10, 49, 176, 29);
-		getContentPane().add(stazionePolizia);
+		policeStation = new JButton("Police station");
+		policeStation.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		policeStation.setBounds(10, 49, 176, 29);
+		getContentPane().add(policeStation);
 		
-		stazioneTreni = new JButton("Train station");
-		stazioneTreni.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		stazioneTreni.setBounds(196, 49, 176, 29);
-		getContentPane().add(stazioneTreni);
+		trainStation = new JButton("Train station");
+		trainStation.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		trainStation.setBounds(196, 49, 176, 29);
+		getContentPane().add(trainStation);
 		
-		aereoporto = new JButton("Aereoporto");
-		aereoporto.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		aereoporto.setBounds(10, 87, 115, 29);
-		getContentPane().add(aereoporto);
+		airport = new JButton("Aereoporto");
+		airport.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		airport.setBounds(10, 87, 115, 29);
+		getContentPane().add(airport);
 		
-		salaGiochi = new JButton("Sala giochi");
-		salaGiochi.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		salaGiochi.setBounds(141, 87, 115, 29);
-		getContentPane().add(salaGiochi);
+		arcade = new JButton("Sala giochi");
+		arcade.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		arcade.setBounds(141, 87, 115, 29);
+		getContentPane().add(arcade);
 		
 		casino = new JButton("Casino");
 		casino.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		casino.setBounds(269, 87, 85, 29);
 		getContentPane().add(casino);
 		
-		fabbrica = new JButton("Fabbrica");
-		fabbrica.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		fabbrica.setBounds(10, 124, 102, 29);
-		getContentPane().add(fabbrica);
+		factory = new JButton("Fabbrica");
+		factory.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		factory.setBounds(10, 124, 102, 29);
+		getContentPane().add(factory);
 		
 		supermarket = new JButton("Supermarket");
 		supermarket.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		supermarket.setBounds(122, 124, 140, 29);
+		supermarket.setBounds(131, 124, 155, 29);
 		getContentPane().add(supermarket);
-		
+	}
+	
+	public JPanel getContentPane() {
+		return contentPane;
+	}
+	public JButton getHouse() {
+		return house;
 	}
 	public JButton getCinema() {
 		return cinema;
 	}
-	public JPanel getContentPane() {
-		return contentPane;
+	public JButton getRestaurant() {
+		return restaurant;
 	}
-	public JButton getStazioneTreni() {
-		return stazioneTreni;
+	public JButton getPoliceStation() {
+		return policeStation;
 	}
-	public JButton getAereoporto() {
-		return aereoporto;
+	public JButton getTrainStation() {
+		return trainStation;
 	}
-	public JButton getSalaGiochi() {
-		return salaGiochi;
+	public JButton getAirport() {
+		return airport;
+	}
+	public JButton getArcade() {
+		return arcade;
 	}
 	public JButton getCasino() {
 		return casino;
 	}
-	public JButton getFabbrica() {
-		return fabbrica;
+	public JButton getFactory() {
+		return factory;
 	}
 	public JButton getSupermarket() {
 		return supermarket;
 	}
-	public JButton getRistorante() {
-		return ristorante;
-	}
-	public JButton getStazionePolizia() {
-		return stazionePolizia;
-	}
-	public JButton getCondominio() {
-		return condominio;
-	}
-	
-
 }

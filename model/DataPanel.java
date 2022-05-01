@@ -2,10 +2,10 @@ package model;
 
 import java.time.LocalDateTime;
 
-public class DatiPanel {
+public class DataPanel {
 	private LocalDateTime day; 
 	
-	public DatiPanel(LocalDateTime day) {
+	public DataPanel(LocalDateTime day) {
 		this.day = day;
 		
 	}

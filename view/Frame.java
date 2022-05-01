@@ -15,20 +15,20 @@ public class Frame extends JFrame implements WindowListener
 {
 	private static Panel panel;
 	
-	private static String keyHouse="House";
-	private static String keyCinema="Cinema";
-	private static String keyRestaurant="Restaurant";
-	private static String keyPoliceStation="PoliceStation";
-	private static String keyTrainStation="TrainStation";
-	private static String keyAirport="Airport";
-	private static String keyArcade="Arcade";
-	private static String keyCasino="Casino";
-	private static String keyFactory="Factory";
-	private static String keySupermarket="Supermarket";
-	private static JLabel[] lbls;
-	private static JLabel[] nLbls;
-	private static HashMap<String, JLabel> mapLbls;
-	private static HashMap<String, JLabel> mapNLbls;
+	private String keyHouse="House";
+	private String keyCinema="Cinema";
+	private String keyRestaurant="Restaurant";
+	private String keyPoliceStation="PoliceStation";
+	private String keyTrainStation="TrainStation";
+	private String keyAirport="Airport";
+	private String keyArcade="Arcade";
+	private String keyCasino="Casino";
+	private String keyFactory="Factory";
+	private String keySupermarket="Supermarket";
+	private JLabel[] lbls;
+	private JLabel[] nLbls;
+	private HashMap<String, JLabel> mapLbls;
+	private HashMap<String, JLabel> mapNLbls;
 	private JLabel lblTest;
 	
 	public Frame()
@@ -193,17 +193,17 @@ public class Frame extends JFrame implements WindowListener
 	{
 		return panel;
 	}
-	////
 
 	////////////////////////////////////////////////////////////////////////////
-	public void setNLblPutHouse(String sd) {
-		// TODO Auto-generated method stub
-		mapNLbls.get(keyHouse).setText(sd);
-	}
 	public String getNLblPutHouse() {
 		// TODO Auto-generated method stub
 		return mapNLbls.get(keyHouse).getText();
 	}
+	public void setNLblPutHouse(String sd) {
+		// TODO Auto-generated method stub
+		mapNLbls.get(keyHouse).setText(sd);
+	}
+	
 	public String getNLblPutCinema()
 	{
 		return mapNLbls.get(keyCinema).getText();
@@ -230,6 +230,7 @@ public class Frame extends JFrame implements WindowListener
 	{
 		mapNLbls.get(keyPoliceStation).setText(s);
 	}
+	
 	public String getNLblPutTrainStation()
 	{
 		return mapNLbls.get(keyTrainStation).getText();
@@ -238,6 +239,7 @@ public class Frame extends JFrame implements WindowListener
 	{
 		mapNLbls.get(keyTrainStation).setText(s);
 	}
+	
 	public String getNLblPutAirport()
 	{
 		return mapNLbls.get(keyAirport).getText();
@@ -246,6 +248,7 @@ public class Frame extends JFrame implements WindowListener
 	{
 		mapNLbls.get(keyAirport).setText(s);
 	}
+	
 	public String getNLblPutArcade()
 	{
 		return mapNLbls.get(keyArcade).getText();
@@ -254,6 +257,7 @@ public class Frame extends JFrame implements WindowListener
 	{
 		mapNLbls.get(keyArcade).setText(s);
 	}
+	
 	public String getNLblPutCasino()
 	{
 		return mapNLbls.get(keyCasino).getText();
@@ -262,6 +266,7 @@ public class Frame extends JFrame implements WindowListener
 	{
 		 mapNLbls.get(keyCasino).setText(s);
 	}
+	
 	public String getNLblPutFactory()
 	{
 		return mapNLbls.get(keyFactory).getText();
@@ -270,6 +275,7 @@ public class Frame extends JFrame implements WindowListener
 	{
 		 mapNLbls.get(keyFactory).setText(s);
 	}
+	
 	public String getNLblPutSupermarket()
 	{
 		return mapNLbls.get(keySupermarket).getText();

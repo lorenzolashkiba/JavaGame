@@ -27,7 +27,7 @@ public class BuildListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 	
-		if(e.getSource()==b.getCondominio()) {
+		if(e.getSource()==b.getHouse()) {
 			
 			System.out.print("s");
 			int n = Integer.parseInt(frame.getNLblPutHouse());
@@ -38,23 +38,23 @@ public class BuildListener implements ActionListener {
 			int n = Integer.parseInt(frame.getNLblPutCinema());
 			n++;
 			frame.setNLblPutCinema(n+"");
-		}else if(e.getSource()==b.getRistorante()) {
+		}else if(e.getSource()==b.getRestaurant()) {
 			int n = Integer.parseInt(frame.getNLblPutRestaurant());
 			n++;
 			frame.setNLblPutRestaurant(n+"");
-		}else if(e.getSource()==b.getStazionePolizia()) {
+		}else if(e.getSource()==b.getPoliceStation()) {
 			int n = Integer.parseInt(frame.getNLblPutPoliceStation());
 			n++;
 			frame.setNLblPutPoliceStation(n+"");
-		}else if(e.getSource()==b.getStazioneTreni()) {
+		}else if(e.getSource()==b.getTrainStation()) {
 			int n = Integer.parseInt(frame.getNLblPutTrainStation());
 			n++;
 			frame.setNLblPutTrainStation(n+"");
-		}else if(e.getSource()==b.getAereoporto()) {
+		}else if(e.getSource()==b.getAirport()) {
 			int n = Integer.parseInt(frame.getNLblPutAirport());
 			n++;
 			frame.setNLblPutAirport(n+"");
-		}else if(e.getSource()==b.getSalaGiochi()) {
+		}else if(e.getSource()==b.getArcade()) {
 			int n = Integer.parseInt(frame.getNLblPutArcade());
 			n++;
 			frame.setNLblPutArcade(n+"");
@@ -62,7 +62,7 @@ public class BuildListener implements ActionListener {
 			int n = Integer.parseInt(frame.getNLblPutCasino());
 			n++;
 			frame.setNLblPutCasino(n+"");
-		}else if(e.getSource()==b.getFabbrica()) {
+		}else if(e.getSource()==b.getFactory()) {
 			int n = Integer.parseInt(frame.getNLblPutFactory());
 			n++;
 			frame.setNLblPutFactory(n+"");

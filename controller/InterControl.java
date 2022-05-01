@@ -5,15 +5,15 @@ import java.awt.event.ActionListener;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-import model.DatiPanel;
+import model.DataPanel;
 import view.BuildFrame;
 import view.Frame;
 import view.Panel;
 import view.WarningFrame;
 
 public class InterControl extends Thread implements ActionListener{
-	private Panel dati;
-	private DatiPanel datiPanel;
+	private Panel data;
+	private DataPanel dataPanel;
 	private long startTime;
 	private DateTimeFormatter format;
 	private Frame frame;
@@ -21,29 +21,29 @@ public class InterControl extends Thread implements ActionListener{
 	private BuildFrame buildFrame;
 	
 	public InterControl(Frame frame,BuildFrame bf) {
-		datiPanel = new DatiPanel(LocalDateTime.now());
+		dataPanel = new DataPanel(LocalDateTime.now());
 		startTime = System.currentTimeMillis();
 		this.frame = frame;
-		this.dati = frame.getPannello();
+		this.data = frame.getPannello();
 		this.start();
 		format = DateTimeFormatter.ofPattern("dd-MM-yyyy");  
-		dati.getLblHour().setText(datiPanel.getDay().format(format));
+		data.getLblHour().setText(dataPanel.getDay().format(format));
 		buildFrame = bf;
 		buildListener = new BuildListener(this,frame);
-		dati.btnPanelListener(this);
+		data.btnPanelListener(this);
 		
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 	
-		if(e.getSource() == dati.getBtnBuild() ) {
+		if(e.getSource() == data.getBtnBuild() ) {
 			
 			BuildFrame b = new BuildFrame();
 			buildListener.setListener(b);
 			b.setVisible(true);
 			
-		}else if(e.getSource() == dati.getBtnWarnings()) {
+		}else if(e.getSource() == data.getBtnWarnings()) {
 			
 			WarningFrame w = new WarningFrame();
 			w.build();
@@ -55,10 +55,10 @@ public class InterControl extends Thread implements ActionListener{
 		
 		if(elapsedTimeSec>60) {
 			System.out.print("new day");
-			datiPanel.setDay(datiPanel.getDay().plusDays(1));
+			dataPanel.setDay(dataPanel.getDay().plusDays(1));
 			
 			// TODO write day to JLabel
-			dati.getLblHour().setText(datiPanel.getDay().format(format));
+			data.getLblHour().setText(dataPanel.getDay().format(format));
 			startTime = System.currentTimeMillis();
 		}
 	}
