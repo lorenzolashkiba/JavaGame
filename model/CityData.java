@@ -15,8 +15,6 @@ public class CityData
 	private int casinoNum;
 	private int factoriesNum;
 	private int supermarketsNum;
-	private int parksNum;
-	private int hospitalsNum;
 	
 	public CityData(LocalDateTime day)
 	{
@@ -31,8 +29,6 @@ public class CityData
 		this.casinoNum=0;
 		this.factoriesNum=0;
 		this.supermarketsNum=0;
-		this.parksNum=0;
-		this.hospitalsNum=0;
 	}
 
 	public LocalDateTime getDay()
@@ -143,25 +139,5 @@ public class CityData
 	public void setSupermarketsNum(int supermarketsNum)
 	{
 		this.supermarketsNum = supermarketsNum;
-	}
-	
-	public int getParksNum()
-	{
-		return parksNum;
-	}
-
-	public void setParksNum(int parksNum)
-	{
-		this.parksNum = parksNum;
-	}
-	
-	public int getHospitalsNum()
-	{
-		return hospitalsNum;
-	}
-
-	public void setHospitalsNum(int hospitalsNum)
-	{
-		this.hospitalsNum = hospitalsNum;
 	}
 }

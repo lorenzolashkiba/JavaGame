@@ -124,7 +124,7 @@ public class Panel extends JPanel
 		
 		nMoney = new JLabel("10000");
 		nMoney.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		nMoney.setBounds(307, 11, 58, 40);
+		nMoney.setBounds(307, 11, 127, 40);
 		add(nMoney);
 		
 		btnBuild = new JButton("Build");

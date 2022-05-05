@@ -29,7 +29,6 @@ public class Frame extends JFrame implements WindowListener
 	private JLabel[] nLbls;
 	private HashMap<String, JLabel> mapLbls;
 	private HashMap<String, JLabel> mapNLbls;
-	private JLabel lblTest;
 	
 	public Frame()
 	{

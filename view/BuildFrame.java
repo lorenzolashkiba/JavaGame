@@ -67,7 +67,7 @@ public class BuildFrame extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		house = new JButton("Condominio");
+		house = new JButton("House");
 		house.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		house.setBounds(10, 10, 121, 29);
 		getContentPane().add(house);
@@ -92,12 +92,12 @@ public class BuildFrame extends JFrame {
 		trainStation.setBounds(196, 49, 176, 29);
 		getContentPane().add(trainStation);
 		
-		airport = new JButton("Aereoporto");
+		airport = new JButton("Airport");
 		airport.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		airport.setBounds(10, 87, 115, 29);
 		getContentPane().add(airport);
 		
-		arcade = new JButton("Sala giochi");
+		arcade = new JButton("Arcade");
 		arcade.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		arcade.setBounds(141, 87, 115, 29);
 		getContentPane().add(arcade);
@@ -107,7 +107,7 @@ public class BuildFrame extends JFrame {
 		casino.setBounds(269, 87, 85, 29);
 		getContentPane().add(casino);
 		
-		factory = new JButton("Fabbrica");
+		factory = new JButton("Factory");
 		factory.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		factory.setBounds(10, 124, 102, 29);
 		getContentPane().add(factory);

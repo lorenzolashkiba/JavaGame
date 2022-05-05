@@ -12,18 +12,18 @@ public class BuildListener implements ActionListener {
 	private BuildFrame b;
 	private Frame frame;
 	private InterControl c;
+	
 	public BuildListener(InterControl interControl,Frame frame) {
 		this.c = interControl;
 		this.frame = frame;
-	
-		
-
 	}
+	
 	public void setListener(BuildFrame b) {
 		this.b = b;
 		this.b.setBuildListener(this);
 		this.b.btnBuildListener(this);
 	}
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 	

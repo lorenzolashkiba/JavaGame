@@ -11,7 +11,8 @@ import view.Frame;
 import view.Panel;
 import view.WarningFrame;
 
-public class InterControl extends Thread implements ActionListener{
+public class InterControl extends Thread implements ActionListener
+{
 	private Panel data;
 	private DataPanel dataPanel;
 	private long startTime;
