@@ -10,31 +10,33 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JLabel;
+import java.awt.Color;
 
 public class Frame extends JFrame implements WindowListener
 {
-	private static Panel panel;
+	private Panel panel;
 	
-	private static String keyHouse="House";
-	private static String keyCinema="Cinema";
-	private static String keyRestaurant="Restaurant";
-	private static String keyPoliceStation="PoliceStation";
-	private static String keyTrainStation="TrainStation";
-	private static String keyAirport="Airport";
-	private static String keyArcade="Arcade";
-	private static String keyCasino="Casino";
-	private static String keyFactory="Factory";
-	private static String keySupermarket="Supermarket";
-	private static JLabel[] lbls;
-	private static JLabel[] nLbls;
-	private static HashMap<String, JLabel> mapLbls;
-	private static HashMap<String, JLabel> mapNLbls;
-	private JLabel lblTest;
+	public String keyHouse="House";
+	public String keyCinema="Cinema";
+	public String keyRestaurant="Restaurant";
+	public String keyPoliceStation="PoliceStation";
+	public String keyTrainStation="TrainStation";
+	public String keyAirport="Airport";
+	public String keyArcade="Arcade";
+	public String keyCasino="Casino";
+	public String keyFactory="Factory";
+	public String keySupermarket="Supermarket";
+	public JLabel[] lbls;
+	public JLabel[] nLbls;
+	public HashMap<String, JLabel> mapLbls;
+	public HashMap<String, JLabel> mapNLbls;
+	public JLabel lblTest;
 	
 	public Frame()
 	{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		panel=new Panel();
+		panel.getTextField().setForeground(Color.RED);
 		this.setContentPane(panel);
 		lbls=new JLabel[10];
 		nLbls=new JLabel[10];
@@ -211,6 +213,10 @@ public class Frame extends JFrame implements WindowListener
 	public void setNLblPutCinema(String s)
 	{
 		 mapNLbls.get(keyCinema).setText(s);
+	}
+	public void setNLblPut(String key,String s)
+	{
+		 mapNLbls.get(key).setText(s);
 	}
 	
 	public String getNLblPutRestaurant()

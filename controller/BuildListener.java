@@ -24,6 +24,18 @@ public class BuildListener implements ActionListener {
 		this.b.setBuildListener(this);
 		this.b.btnBuildListener(this);
 	}
+	private boolean compra(int saldo,int n,String key) {
+		if(c.moneyLogic(saldo)) {
+			c.setMessage("");
+			n++;
+			frame.setNLblPut(key,n+"");
+			return true;
+		}else {
+			c.setMessage("non hai abbastanza fondi");
+			return false;
+		}
+	
+	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
 	
@@ -31,48 +43,41 @@ public class BuildListener implements ActionListener {
 			
 			System.out.print("s");
 			int n = Integer.parseInt(frame.getNLblPutHouse());
-			n++;
-			frame.setNLblPutHouse(n+"");
+			if(compra(-3000,n,frame.keyHouse)) {
+				c.addAbitanti(30);
+			}
 			
 		}else if(e.getSource()==b.getCinema()) {
 			int n = Integer.parseInt(frame.getNLblPutCinema());
-			n++;
-			frame.setNLblPutCinema(n+"");
+			compra(-3000,n,frame.keyCinema);
+			
 		}else if(e.getSource()==b.getRistorante()) {
 			int n = Integer.parseInt(frame.getNLblPutRestaurant());
-			n++;
-			frame.setNLblPutRestaurant(n+"");
+			compra(-1500,n,frame.keyRestaurant);
 		}else if(e.getSource()==b.getStazionePolizia()) {
 			int n = Integer.parseInt(frame.getNLblPutPoliceStation());
-			n++;
-			frame.setNLblPutPoliceStation(n+"");
+			compra(-2000,n,frame.keyPoliceStation);
 		}else if(e.getSource()==b.getStazioneTreni()) {
 			int n = Integer.parseInt(frame.getNLblPutTrainStation());
-			n++;
-			frame.setNLblPutTrainStation(n+"");
+			compra(-7000,n,frame.keyTrainStation);
 		}else if(e.getSource()==b.getAereoporto()) {
 			int n = Integer.parseInt(frame.getNLblPutAirport());
-			n++;
-			frame.setNLblPutAirport(n+"");
+			compra(-10000,n,frame.keyAirport);
 		}else if(e.getSource()==b.getSalaGiochi()) {
 			int n = Integer.parseInt(frame.getNLblPutArcade());
-			n++;
-			frame.setNLblPutArcade(n+"");
+			compra(-2500,n,frame.keyArcade);
 		}else if(e.getSource()==b.getCasino()) {
 			int n = Integer.parseInt(frame.getNLblPutCasino());
-			n++;
-			frame.setNLblPutCasino(n+"");
+			compra(-2000,n,frame.keyCasino);
 		}else if(e.getSource()==b.getFabbrica()) {
 			int n = Integer.parseInt(frame.getNLblPutFactory());
-			n++;
-			frame.setNLblPutFactory(n+"");
+			compra(-5000,n,frame.keyCasino);
 		}else if(e.getSource()==b.getSupermarket()) {
 			int n = Integer.parseInt(frame.getNLblPutSupermarket());
-			n++;
-			frame.setNLblPutFactory(n+"");
+			compra(-3500,n,frame.keySupermarket);
 		}
 		
-		
+	
 		
 		
 	}

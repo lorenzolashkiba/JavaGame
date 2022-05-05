@@ -9,6 +9,7 @@ import java.awt.Color;
 import javax.swing.JButton;
 
 import controller.InterControl;
+import javax.swing.JTextField;
 
 public class Panel extends JPanel
 {
@@ -32,6 +33,7 @@ public class Panel extends JPanel
 	private JProgressBar progressBar;
 	private JButton btnBuild;
 	private JButton btnWarning;
+	private JTextField textField;
 	
 	public Panel()
 	{
@@ -59,7 +61,7 @@ public class Panel extends JPanel
 		
 		lblPplSatisfaction = new JLabel("People satisfaction");
 		lblPplSatisfaction.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		lblPplSatisfaction.setBounds(26, 141, 138, 23);
+		lblPplSatisfaction.setBounds(26, 141, 161, 23);
 		add(lblPplSatisfaction);
 		
 		lblPplNum = new JLabel("People");
@@ -139,17 +141,30 @@ public class Panel extends JPanel
 		btnWarning.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		btnWarning.setBounds(190, 322, 109, 37);
 		add(btnWarning);
+		
+		textField = new JTextField();
+		textField.setBounds(10, 371, 339, 96);
+		add(textField);
+		textField.setColumns(10);
 	}
 	
+	public JTextField getTextField() {
+		return textField;
+	}
+
+	public void setTextField(String s) {
+		this.textField.setText(s);
+	}
+
 	public void btnPanelListener(InterControl c)
 	{
 		btnBuild.addActionListener(c);
 		btnWarning.addActionListener(c);
 	}
 	
-	public JLabel getLblMoney()
+	public String getLblMoney()
 	{
-		return lblMoney;
+		return lblMoney.getText();
 	}
 	public JLabel getLblValuation()
 	{
