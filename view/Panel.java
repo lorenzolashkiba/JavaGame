@@ -49,7 +49,7 @@ public class Panel extends JPanel
 		lblValuation.setBounds(106, 33, 145, 23);
 		add(lblValuation);
 		
-		lblMajorRating = new JLabel("Major rating");
+		lblMajorRating = new JLabel("Mayor rating");
 		lblMajorRating.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		lblMajorRating.setBounds(26, 75, 105, 23);
 		add(lblMajorRating);
@@ -90,6 +90,7 @@ public class Panel extends JPanel
 		add(lblHour);
 		
 		progressBar = new JProgressBar();
+		progressBar.setValue(1);
 		progressBar.setForeground(Color.GREEN);
 		progressBar.setBounds(244, 75, 80, 22);
 		add(progressBar);

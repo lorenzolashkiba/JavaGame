@@ -31,8 +31,9 @@ public class CityData
 		this.casinoNum=0;
 		this.factoriesNum=0;
 		this.supermarketsNum=0;
-		this.parksNum=0;
-		this.hospitalsNum=0;
+	}
+	public int sumAll() {
+		return housesNum+cinemasNum+restaurantsNum+policeStationsNum+trainStationsNum+airportsNum+arcadesNum+casinoNum+factoriesNum+supermarketsNum;
 	}
 
 	public LocalDateTime getDay()
@@ -143,25 +144,5 @@ public class CityData
 	public void setSupermarketsNum(int supermarketsNum)
 	{
 		this.supermarketsNum = supermarketsNum;
-	}
-	
-	public int getParksNum()
-	{
-		return parksNum;
-	}
-
-	public void setParksNum(int parksNum)
-	{
-		this.parksNum = parksNum;
-	}
-	
-	public int getHospitalsNum()
-	{
-		return hospitalsNum;
-	}
-
-	public void setHospitalsNum(int hospitalsNum)
-	{
-		this.hospitalsNum = hospitalsNum;
 	}
 }

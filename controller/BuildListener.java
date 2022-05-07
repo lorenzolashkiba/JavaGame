@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.lang.ModuleLayer.Controller;
 
+import model.CityData;
 import view.Frame;
 import view.BuildFrame;
 
@@ -12,10 +13,12 @@ public class BuildListener implements ActionListener {
 	private BuildFrame b;
 	private Frame frame;
 	private InterControl c;
-	public BuildListener(InterControl interControl,Frame frame) {
+	private CityData cityData;
+	
+	public BuildListener(InterControl interControl,Frame frame,CityData cityData) {
 		this.c = interControl;
 		this.frame = frame;
-	
+		this.cityData = cityData;
 		
 
 	}
@@ -40,41 +43,75 @@ public class BuildListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 	
 		if(e.getSource()==b.getCondominio()) {
-			
-			System.out.print("s");
+		
 			int n = Integer.parseInt(frame.getNLblPutHouse());
 			if(compra(-3000,n,frame.keyHouse)) {
 				c.addAbitanti(30);
+				cityData.setHousesNum(cityData.getHousesNum()+1);
 			}
 			
 		}else if(e.getSource()==b.getCinema()) {
 			int n = Integer.parseInt(frame.getNLblPutCinema());
-			compra(-3000,n,frame.keyCinema);
+			if(compra(-3000,n,frame.keyCinema)) {
+				c.addAbitanti(3);
+				cityData.setCinemasNum(cityData.getCinemasNum()+1);
+			}
 			
 		}else if(e.getSource()==b.getRistorante()) {
 			int n = Integer.parseInt(frame.getNLblPutRestaurant());
-			compra(-1500,n,frame.keyRestaurant);
+			if(compra(-1500,n,frame.keyRestaurant)) {
+				c.addAbitanti(3);
+				cityData.setRestaurantsNum(cityData.getRestaurantsNum()+1);
+			}
+			
 		}else if(e.getSource()==b.getStazionePolizia()) {
 			int n = Integer.parseInt(frame.getNLblPutPoliceStation());
-			compra(-2000,n,frame.keyPoliceStation);
+			if(compra(-2000,n,frame.keyPoliceStation)) {
+				c.addAbitanti(4);
+				cityData.setPoliceStationsNum(cityData.getPoliceStationsNum()+1);
+			}
+			
 		}else if(e.getSource()==b.getStazioneTreni()) {
 			int n = Integer.parseInt(frame.getNLblPutTrainStation());
-			compra(-7000,n,frame.keyTrainStation);
+			if(compra(-7000,n,frame.keyTrainStation)) {
+				c.addAbitanti(6);
+				cityData.setTrainStationsNum(cityData.getTrainStationsNum()+1);
+			}
+			
 		}else if(e.getSource()==b.getAereoporto()) {
 			int n = Integer.parseInt(frame.getNLblPutAirport());
-			compra(-10000,n,frame.keyAirport);
+			if(compra(-10000,n,frame.keyAirport)) {
+				c.addAbitanti(10);
+				cityData.setAirportsNum(cityData.getAirportsNum()+1);
+			}
+			
 		}else if(e.getSource()==b.getSalaGiochi()) {
 			int n = Integer.parseInt(frame.getNLblPutArcade());
-			compra(-2500,n,frame.keyArcade);
+			if(compra(-2500,n,frame.keyArcade)) {
+				c.addAbitanti(2);
+				cityData.setArcadesNum(cityData.getArcadesNum()+1);
+			}
+			
 		}else if(e.getSource()==b.getCasino()) {
 			int n = Integer.parseInt(frame.getNLblPutCasino());
-			compra(-2000,n,frame.keyCasino);
+			if(compra(-2000,n,frame.keyCasino)) {
+				c.addAbitanti(2);
+				cityData.setCasinoNum(cityData.getCasinoNum()+1);
+			}
+			
 		}else if(e.getSource()==b.getFabbrica()) {
 			int n = Integer.parseInt(frame.getNLblPutFactory());
-			compra(-5000,n,frame.keyCasino);
+			if(compra(-5000,n,frame.keyCasino)) {
+				c.addAbitanti(15);
+				cityData.setFactoriesNum(cityData.getFactoriesNum()+1);
+			}
+			
 		}else if(e.getSource()==b.getSupermarket()) {
 			int n = Integer.parseInt(frame.getNLblPutSupermarket());
-			compra(-3500,n,frame.keySupermarket);
+			if(compra(-3500,n,frame.keySupermarket)) {
+				c.addAbitanti(8);
+				cityData.setSupermarketsNum(cityData.getSupermarketsNum()+1);
+			}
 		}
 		
 	
