@@ -1,2 +1,2 @@
-# JavaGame develop branch
+# JavaGame feature branch
 school multi thread project
