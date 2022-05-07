@@ -11,7 +11,11 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JLabel;
 import java.awt.Color;
-
+/**
+ * finestra principale
+ * @author Shera shefik
+ *
+ */
 public class Frame extends JFrame implements WindowListener
 {
 	private Panel panel;
@@ -32,6 +36,9 @@ public class Frame extends JFrame implements WindowListener
 	public HashMap<String, JLabel> mapNLbls;
 	public JLabel lblTest;
 	
+	/**
+	 * creates Frame
+	 */
 	public Frame()
 	{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -101,7 +108,6 @@ public class Frame extends JFrame implements WindowListener
 		panel.add(lbls[4]);
 		panel.add(nLbls[4]);
 		
-		/////////////////////////////////////////////////////////////
 		lbls[5]=new JLabel("Airport");
 		lbls[5].setBounds(800, 20, 130, 85);
 		lbls[5].setIcon(new ImageIcon(Frame.class.getResource("/imgs/airport.png")));
@@ -188,22 +194,18 @@ public class Frame extends JFrame implements WindowListener
 		this.setResizable(false);
 		this.setBounds(20, 20, 1200, 660);
 		this.setVisible(true);
-//		this.addWindowListener(this);
 		this.setTitle("Sim City replica");
 	}
 	public Panel getPannello()
 	{
 		return panel;
 	}
-	////
-
-	////////////////////////////////////////////////////////////////////////////
 	public void setNLblPutHouse(String sd) {
-		// TODO Auto-generated method stub
+		
 		mapNLbls.get(keyHouse).setText(sd);
 	}
 	public String getNLblPutHouse() {
-		// TODO Auto-generated method stub
+	
 		return mapNLbls.get(keyHouse).getText();
 	}
 	public String getNLblPutCinema()
@@ -285,12 +287,9 @@ public class Frame extends JFrame implements WindowListener
 		mapNLbls.get(keySupermarket).setText(s);
 	}
 	
-	@Override
-	public void windowOpened(WindowEvent e)
-	{
-		
-	}
-	
+	/**
+	 * funzione per chiudere
+	 */
 	@Override
 	public void windowClosing(WindowEvent e)
 	{
@@ -302,35 +301,35 @@ public class Frame extends JFrame implements WindowListener
 			this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		}
 	}
-	
 	@Override
-	public void windowClosed(WindowEvent e)
-	{
+	public void windowOpened(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void windowClosed(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void windowIconified(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void windowDeiconified(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void windowActivated(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void windowDeactivated(WindowEvent e) {
+		// TODO Auto-generated method stub
 		
 	}
 	
-	@Override
-	public void windowIconified(WindowEvent e)
-	{
-		
-	}
-	
-	@Override
-	public void windowDeiconified(WindowEvent e)
-	{
-		
-	}
-	
-	@Override
-	public void windowActivated(WindowEvent e)
-	{
-		
-	}
-	
-	@Override
-	public void windowDeactivated(WindowEvent e)
-	{
-		
-	}
-
 }

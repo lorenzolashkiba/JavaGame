@@ -7,6 +7,11 @@ import model.CityData;
 import view.Frame;
 import view.BuildFrame;
 
+/**
+ * Classe responsabile per la gestione dei bottoni della finestra BuildFrame
+ * @author lorenzo lashkiba
+ *
+ */
 public class BuildListener implements ActionListener {
 	
 	private BuildFrame b;
@@ -14,6 +19,12 @@ public class BuildListener implements ActionListener {
 	private InterControl c;
 	private CityData cityData;
 	
+	/**
+	 * costruttore
+	 * @param interControl
+	 * @param frame
+	 * @param cityData
+	 */
 	public BuildListener(InterControl interControl,Frame frame,CityData cityData) {
 		this.c = interControl;
 		this.frame = frame;
@@ -21,11 +32,22 @@ public class BuildListener implements ActionListener {
 		
 
 	}
+	/**
+	 * set listeners 
+	 * @param b buildFrames
+	 */
 	public void setListener(BuildFrame b) {
 		this.b = b;
 		this.b.setBuildListener(this);
 		this.b.btnBuildListener(this);
 	}
+	/**
+	 * 
+	 * @param saldo
+	 * @param n contatore numero
+	 * @param key hashmap key
+	 * @return boolean
+	 */
 	private boolean compra(int saldo,int n,String key) {
 		if(c.moneyLogic(saldo)) {
 			c.setMessage("");
@@ -38,6 +60,9 @@ public class BuildListener implements ActionListener {
 		}
 	
 	}
+	/**
+	 * funzione che gestisce tutti i bottoni della finestra BuildFrame
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 	
@@ -113,12 +138,7 @@ public class BuildListener implements ActionListener {
 			}
 		}
 		
-	
-		
-		
 	}
-	public BuildListener returnObj() {
-		return this;
-	}
+
 	
 }

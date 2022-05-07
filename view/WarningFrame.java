@@ -8,13 +8,17 @@ import javax.swing.border.EmptyBorder;
 import java.awt.GridLayout;
 import javax.swing.JList;
 import javax.swing.AbstractListModel;
-
+/**
+ * classe della finestra warning
+ * @author Shera Shefik
+ *
+ */
 public class WarningFrame extends JFrame {
 
 	private JPanel contentPane;
 
 	/**
-	 * Launch the application.
+	 * Launch this application.
 	 */
 	public static void build() {
 		EventQueue.invokeLater(new Runnable() {

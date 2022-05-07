@@ -2,6 +2,11 @@ package model;
 
 import java.time.LocalDateTime;
 
+/**
+ * Classe responsabile del salvataggio dei dati della citta
+ * @author lorenzo lashkiba
+ *
+ */
 public class CityData
 {
 	private LocalDateTime day;
@@ -18,6 +23,10 @@ public class CityData
 	private int parksNum;
 	private int hospitalsNum;
 	
+	/**
+	 * costruttore
+	 * @param day numero giorno attuale
+	 */
 	public CityData(LocalDateTime day)
 	{
 		this.day = day;

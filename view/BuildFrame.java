@@ -13,6 +13,11 @@ import controller.BuildListener;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+/**
+ * Finestra per costruire i servizi e strutture
+ * @author Shera shefik
+ *
+ */
 public class BuildFrame extends JFrame {
 
 	private JPanel contentPane;
@@ -28,12 +33,9 @@ public class BuildFrame extends JFrame {
 	private JButton fabbrica;
 	private JButton supermarket;
 	/**
-	 * Launch the application.
+	 * costruttore
+	 * @param l buildListener
 	 */
-
-	public void setBuildListener(BuildListener l) {
-		buildListener = l;
-	}
 	public void btnBuildListener(BuildListener l) {
 		condominio.addActionListener(l);
 		cinema.addActionListener(l);
@@ -48,7 +50,7 @@ public class BuildFrame extends JFrame {
 		
 	}
 	/**
-	 * Create the frame.
+	 * Creates the frame.
 	 */
 	public BuildFrame() {
 		
@@ -108,6 +110,9 @@ public class BuildFrame extends JFrame {
 		supermarket.setBounds(225, 181, 187, 37);
 		getContentPane().add(supermarket);
 		
+	}
+	public void setBuildListener(BuildListener l) {
+		buildListener = l;
 	}
 	public JButton getCinema() {
 		return cinema;

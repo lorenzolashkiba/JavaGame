@@ -12,7 +12,13 @@ import view.Frame;
 import view.Panel;
 import view.WarningFrame;
 
+/**
+ * Questa classe è responsabile per la gestione secondo il paradigma MVC il model e la view 
+ * @author lorenzo lashkiba
+ *
+ */
 public class InterControl extends Thread implements ActionListener{
+	
 	private Panel dati;
 	private CityData cityData;
 	private DatiPanel datiPanel;
@@ -23,7 +29,12 @@ public class InterControl extends Thread implements ActionListener{
 	private BuildFrame buildFrame;
 	private DatiCitta datiCitta;
 	
-	public InterControl(Frame frame,BuildFrame bf) {
+	/**
+	 * costruttore
+	 * @param frame interfaccia GUI
+	 * @param buildFrame interfaccia GUI del bottone build
+	 */
+	public InterControl(Frame frame,BuildFrame buildFrame) {
 		cityData = new CityData(LocalDateTime.now());
 		datiPanel = new DatiPanel();
 		startTime = System.currentTimeMillis();
@@ -33,12 +44,14 @@ public class InterControl extends Thread implements ActionListener{
 		datiCitta = new DatiCitta(10000);
 		format = DateTimeFormatter.ofPattern("dd-MM-yyyy");  
 		dati.getLblHour().setText(cityData.getDay().format(format));
-		buildFrame = bf;
+		buildFrame = buildFrame;
 		buildListener = new BuildListener(this,frame,cityData);
 		dati.btnPanelListener(this);
 		
 	}
-
+	/**
+	 * Gestione dei bottoni 
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 	
@@ -55,6 +68,10 @@ public class InterControl extends Thread implements ActionListener{
 		}
 		
 	}
+	/**
+	 * funzione responsabile per l'aggiornamento del giorno  
+	 * @return boolean
+	 */
 	private boolean dateChange() {
 		long elapsedTimeSec = (System.currentTimeMillis()-startTime)/1000;
 		
@@ -66,6 +83,9 @@ public class InterControl extends Thread implements ActionListener{
 		}
 		return false;
 	}
+	/**
+	 * funzione della classe Thread dove avviene l'assegnazione dei valori nel Panel 
+	 */
 	public void run() {
 		
 		while(true) {
@@ -126,6 +146,11 @@ public class InterControl extends Thread implements ActionListener{
 			
 		}
 	}
+	/**
+	 * Gestione dell'aggiunta e sottrazione del denaro con controlli
+	 * @param saldo numero da aggiungere al denaro
+	 * @return valore boolean per capire se è andato a buon fine
+	 */
 	public boolean moneyLogic(int saldo) {
 		
 		if(datiCitta.getSaldo()+saldo>=0) {
@@ -135,9 +160,17 @@ public class InterControl extends Thread implements ActionListener{
 		}
 		return false;
 	}
+	/**
+	 * aggiornare il messaggio nella casella del Panel
+	 * @param s messaggio da scrivere
+	 */
 	public void setMessage(String s) {
 		dati.setTextField(s);
 	}
+	/**
+	 * aggiunta abitanti al Panel
+	 * @param number numero abitanti
+	 */
 	public void addAbitanti(int number) {
 		datiPanel.setNumeroAbitanti(datiPanel.getNumeroAbitanti()+number);
 		setAbitanti();

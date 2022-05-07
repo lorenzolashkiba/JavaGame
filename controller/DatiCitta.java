@@ -1,5 +1,9 @@
 package controller;
-
+/**
+ * Classe responsabile per il salvataggio del denaro
+ * @author lorenzo lashkiba
+ *
+ */
 public class DatiCitta {
 	
 	private int saldo;

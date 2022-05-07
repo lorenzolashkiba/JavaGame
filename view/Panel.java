@@ -10,7 +10,11 @@ import javax.swing.JButton;
 
 import controller.InterControl;
 import javax.swing.JTextField;
-
+/**
+ * classe del pannello
+ * @author Shera Shefik
+ *
+ */
 public class Panel extends JPanel
 {
 	private JLabel lblMoney;
@@ -35,6 +39,9 @@ public class Panel extends JPanel
 	private JButton btnWarning;
 	private JTextField textField;
 	
+	/**
+	 * construttore
+	 */
 	public Panel()
 	{
 		setLayout(null);
@@ -156,7 +163,10 @@ public class Panel extends JPanel
 	public void setTextField(String s) {
 		this.textField.setText(s);
 	}
-
+	/**
+	 * set listeners in the InterControl
+	 * @param c InterControl
+	 */
 	public void btnPanelListener(InterControl c)
 	{
 		btnBuild.addActionListener(c);
