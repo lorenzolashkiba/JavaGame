@@ -59,7 +59,6 @@ public class InterControl extends Thread implements ActionListener{
 		long elapsedTimeSec = (System.currentTimeMillis()-startTime)/1000;
 		
 		if(elapsedTimeSec>30) {
-			System.out.print("new day");
 			cityData.setDay(cityData.getDay().plusDays(1));
 			dati.getLblHour().setText(cityData.getDay().format(format));
 			startTime = System.currentTimeMillis();
@@ -140,7 +139,6 @@ public class InterControl extends Thread implements ActionListener{
 		dati.setTextField(s);
 	}
 	public void addAbitanti(int number) {
-		System.out.print(cityData.sumAll());
 		datiPanel.setNumeroAbitanti(datiPanel.getNumeroAbitanti()+number);
 		setAbitanti();
 	}

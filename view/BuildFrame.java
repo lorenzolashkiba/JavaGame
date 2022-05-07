@@ -30,19 +30,7 @@ public class BuildFrame extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	/*public static void build() {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					BuildFrame frame = new BuildFrame();
-					buildListener.setListener()
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}*/
+
 	public void setBuildListener(BuildListener l) {
 		buildListener = l;
 	}
@@ -70,10 +58,7 @@ public class BuildFrame extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		condominio = new JButton("Condominio 3000$");
-		condominio.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
+		
 		condominio.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		condominio.setBounds(29, 10, 168, 39);
 		getContentPane().add(condominio);

@@ -32,9 +32,6 @@ public class CityData
 		this.factoriesNum=0;
 		this.supermarketsNum=0;
 	}
-	public int sumAll() {
-		return housesNum+cinemasNum+restaurantsNum+policeStationsNum+trainStationsNum+airportsNum+arcadesNum+casinoNum+factoriesNum+supermarketsNum;
-	}
 
 	public LocalDateTime getDay()
 	{
